@@ -1,0 +1,12 @@
+# Ignore local data and temporary files
+data/
+results/
+*.Rhistory
+*.RData
+.Rproj.user/
+.DS_Store
+.Rproj.user
+.Rhistory
+.RData
+.httr-oauth
+.quarto
