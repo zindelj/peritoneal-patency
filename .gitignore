@@ -1,12 +1,53 @@
-# Ignore local data and temporary files
+# ================================================================
+# Git ignore rules for TizzuLab R projects
+# ================================================================
+
+# ---- Data and results (local only) ----
 data/
+data_raw/
 results/
-*.Rhistory
+figures/
+*.csv
+*.xlsx
+*.tsv
+*.rds
 *.RData
-.Rproj.user/
-.DS_Store
-.Rproj.user
+
+# ---- R session / history / workspace ----
 .Rhistory
 .RData
+.Ruserdata
+
+# ---- RStudio project files ----
+.Rproj.user/
+.Rproj.user
+.Rproj.backup
+
+# ---- OS-specific ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Authentication & credentials ----
 .httr-oauth
-.quarto
+.Renviron
+
+# ---- renv (keep lockfile only) ----
+renv/library/
+renv/staging/
+renv/python/
+renv/cache/
+
+# ---- Quarto / temporary builds ----
+.quarto/
+*_cache/
+_cache/
+*.utf8.md
+
+# ---- Logs ----
+session_info.log
+*.log
+
+# ---- Misc ----
+*.tmp
+~$*
