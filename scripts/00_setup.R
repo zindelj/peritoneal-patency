@@ -49,12 +49,22 @@ theme_set(theme_bw())
 set.seed(1234)
 
 # ---- Folder setup ----
-data_dir     <- here("data")
-scripts_dir  <- here("scripts")
-results_dir  <- here("results")
-figures_dir  <- here("figures")
-dirs <- c(data_dir, scripts_dir, results_dir, figures_dir)
-for (d in dirs) if (!dir.exists(d)) dir.create(d, recursive = TRUE)
+# Define key folders for the TizzuLab project structure
+data_raw_dir <- here("data_raw")     # raw, unprocessed data
+data_dir     <- here("data")         # processed / cleaned data
+metadata_dir <- here("metadata")     # sample metadata
+scripts_dir  <- here("scripts")      # R scripts
+results_dir  <- here("results")      # plots, tables
+figures_dir  <- here("figures")      # exported figures
+
+dirs <- c(data_raw_dir, data_dir, metadata_dir, scripts_dir, results_dir, figures_dir)
+
+for (d in dirs) {
+  if (!dir.exists(d)) dir.create(d, recursive = TRUE)
+}
+
+cat("Project folders verified/created:\n")
+print(dirs)
 
 # ---- Environment logging ----
 log_file <- file.path(here::here(), "session_info.log")
